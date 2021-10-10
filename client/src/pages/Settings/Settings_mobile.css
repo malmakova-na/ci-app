@@ -1,0 +1,35 @@
+@media (max-width: 320px) {
+    
+    div.footerLinks {
+        margin: 0 0 8px 0;
+    }
+    .header-wrapper.header-wrapper_mobile{
+        flex-basis: 52px;
+        font-size: 18px;
+        grid-row:1/2;
+        line-height: 22px;
+        margin: 0;
+      
+    }
+    
+    div.field {
+        width: 288px;
+        height: 36px;
+    }
+    .form-buttons {
+        display: flex;
+        flex-direction: column;
+        height: 82px;
+        justify-content: space-between;
+    }
+    button.btn--xs, button.btn--xs--3 {
+        width: 288px;
+        height: 36px;
+    }
+    .form-buttons > .button{
+        margin: 0 ;
+    }
+    .container{
+        padding: 0 16px;
+    }
+}

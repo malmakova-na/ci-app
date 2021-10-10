@@ -1,0 +1,101 @@
+.button { 
+    outline: none;
+    border: none;
+    font-size: 13px;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 400;
+    line-height: 36px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.button, 
+.button:active, 
+.button:focus {
+    outline: none;
+}
+.button:disabled {
+    background: #F2F2F2;
+}
+.button:disabled:hover {
+    background:  #F2F2F2;   ;
+}
+.greyButton{
+    background-color: #E6E6E6;
+    line-height: 28px;
+}
+.greyButton:hover {
+    background: #DBDBDB;
+}
+
+.greyButton:focus {
+    border: 2px solid #B3B3B3;
+}
+.noBodyButton {
+    background-image: url('../icons/close.svg');
+    margin: 10px;
+    background-position: center;
+}
+.btn--xxs {
+    width: 16px;
+    height: 16px;
+}
+.btn--xs {
+    width: 80px;
+    height: 36px;
+}
+.btn--xs--2 {
+    width: 28px;
+    height: 28px;
+}
+.btn--xs--3 {
+    width: 69px;
+    height: 36px;
+}
+
+.btn--s {
+    width: 87px ;
+    height: 28px ;
+}
+.btn--xs--1 {
+    width: 81px;
+    height: 36px;
+}
+.btn--xm--1 {
+    height: 28px;
+    width: 95px;
+    line-height: 28px;
+}
+.btn--xm {
+    width: 100px;
+    height: 36px;
+}
+.btn--m {
+    width: 123px;
+    height: 36px;
+}
+.btn--m--1 {
+    width: 92px;
+    height: 28px;
+    /*margin-bottom: 20px;*/
+}
+.yellowButton {
+    background:#FFCC00;
+}
+.yellowButton:hover {
+    background:#F2C200;
+}
+.yellowButton:focus {
+    border: 2px solid #B38F00;
+}
+.btn {
+    width: 87px ;
+    height: 28px ;
+}
+.button_position-r {
+    margin-right: 8px ;
+}

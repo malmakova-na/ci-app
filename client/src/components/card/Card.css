@@ -1,0 +1,131 @@
+.card {
+    background: #FFFFFF;
+    box-shadow: 0px 0px 1px rgba(67, 68, 69, 0.3), 0px 1px 1px rgba(67, 68, 69, 0.3);
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 8px;
+    padding: 12px 24px ;
+    
+    height: 68px;
+    
+}
+.card__icon{
+    width: 24px;
+    height: 24px;
+}
+.card__main-section{
+    width: 100%;
+    
+    display: flex;
+   
+    justify-content: space-between;
+}
+.status {
+    font-size: 18px;
+    margin-right: 4px ;
+}
+.info {
+    flex-grow: 1;
+}
+.date{
+    display: flex;
+    flex-direction: row;
+    font-size: 13px;
+}
+.date-calendar {
+    width: 98px;
+    height: 44px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.info__item_media-status {
+    margin-bottom: 8px;
+}
+.info__item_media-data {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: row;
+}
+.icon__status {
+    height: 21.3125px;
+    width: 21.3125px;
+    border-radius: 0px;
+
+    
+}
+
+.status_pending {
+    color: #FF9A00;
+}
+.status_size_s {
+    font-size: 18px;
+}
+
+.status_error{
+    color: #FF3333;
+}
+.status_ok {
+    color: #00B341;
+}
+.main__section {
+    display: flex;
+    flex-grow: 1;
+    margin: auto;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 44px;
+}
+.card__section{
+    display: flex;
+}
+
+.commit_id {
+    margin-right: 4px;
+}
+.git-info__icon_size_s {
+    width: 16px;
+    height: 8px;
+}
+.git-info {
+    margin-right: 8px;
+}
+.git-info__item{
+    margin-right: 4px ;
+}
+
+.body__item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 12px 0px;
+}
+.user {
+    height: 16px;
+}
+
+.user__icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+}
+.user__icon_size_s {
+    width: 16px;
+    height: 16px;
+}
+.date__info {
+    white-space: nowrap;
+}
+
+.date_bottom {
+    margin-bottom: 12px;
+}
+.date__icon {
+    height: 16px;
+    width: 16px;
+    margin-right: 4px ;
+}
