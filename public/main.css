@@ -29,9 +29,12 @@
 html{
     width: 100%;
     height: 100%;
-    margin: 0;
+    /*margin: 0;*/
+    margin-bottom: 0;
     padding: 0;
+    overflow-y: scroll;
 }
+html::-webkit-scrollbar { width: 0; }
 
  body{
     font-weight: 400px;
@@ -45,6 +48,14 @@ html{
     
 }
 
+.main-wrapper{
+    display: flex;
+    height: 100vh;
+    width: 100%;
+   
+    margin: 0;
+    padding: 0;
+}
 .main {
     display: grid;
     grid-template-columns: 1fr 1024px 1fr;
@@ -52,17 +63,20 @@ html{
     height: 100%
 }
 
-.container, .main {
-    padding: 0;
-    margin: 0;
-}
 .container {
     grid-column: 2/3;
     grid-row: 1/3;
     display: flex;
     flex-direction: column; 
     height: 100%;
+
+
 }
+.container, .main {
+    padding: 0;
+    margin: 0;
+}
+
 .footer {
     grid-column: 2/3;
     grid-row: 3/4;

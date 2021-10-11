@@ -20,7 +20,7 @@ const successImmitation = (state, handler) => {
 }; 
 export const requestImmitation = (state, handler, stateValue, setSubmitted) => {
     setTimeout(()=> {//имитирую загрузку процесс клонирования репозитория
-        stateValue("requestAnswer", successImmitation(state, handler));
+        //stateValue("requestAnswer", successImmitation(state, handler));
         //stateValue("requestAnswer", errorImitation())
         stateValue("sended", false);
         setSubmitted(true);

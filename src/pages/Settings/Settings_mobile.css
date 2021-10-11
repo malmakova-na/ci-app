@@ -3,7 +3,7 @@
     div.footerLinks {
         margin: 0 0 8px 0;
     }
-    .header-wrapper.header-wrapper_mobile{
+    .header{
         flex-basis: 52px;
         font-size: 18px;
         grid-row:1/2;

@@ -9,26 +9,59 @@ import {Button} from "../../components/button";
 import {FormErrors} from "../../components/errors/Error";
 import {validateField} from "./validateField";
 
+import data from "../../moks/dataMock.json";
 import {getDate, getFullDate} from "../../utils/date";
 import {requestImmitation} from "../../utils/requestImmitation";
 import { useSettings } from "./useSettings";
 
-export const Settings = ({header, handler}) => {
+import { useHistory } from "react-router-dom";
+
+import { connect } from 'react-redux';
+import { formSubmited, downloadData} from '../../store/actions';
+const Settings = ({header/*, handler*/, formSubmited, downloadData}) => {
     const  [ state, submitted, setSubmitted, 
             stateValue, clearInputs, clearInput, 
             clearRepository, clearCommand, clearBrunch ] = useSettings();
   
     const [timer, setTimer] = useState(10);
-
+    const [load, setLoading] = useState(false);
+    let history = useHistory();
     useEffect(()=>{
         setSubmitted(false);
     }, [submitted, state]);
 
+
     const onSubmit =(e) => {
         e.preventDefault();
-        requestImmitation(state, handler, stateValue, setSubmitted);
-        stateValue("sended", true);
-        setSubmitted(true);
+        setLoading(true)
+        //loadingBegin();
+        console.log("onSubmit");
+        //console.log(submitted)
+        setTimeout(()=> {//имитирую загрузку процесс клонирования репозитория
+            //console.log(loading, settings)
+            if(state.formValid) {
+                formSubmited({//сохраняю данные из формы
+                    repository: state.repository,
+                    command: state.command,
+                    branch: state.branch,
+                    time: timer
+                });
+                downloadData(data);
+                setSubmitted(true);
+                setLoading(false);
+                //console.log(submitted)
+                //loadingEnd();
+                //console.log(loading, settings);
+                //console.log(loading)
+                //console.log("onSubmit ", settings.loading, settings.loading)
+                history.push('/');
+            } else {
+                //loadingEnd();
+            }
+            
+        }, 2000);
+        //console.log("1");
+        //stateValue("sended", false)
     };
     
 
@@ -45,7 +78,14 @@ export const Settings = ({header, handler}) => {
         setTimer(value)
         setSubmitted(true)
     };
-
+    const getMod =() => {
+        if(state.formValid && load){
+            console.log(true)
+            return true
+        } 
+        console.log(false)
+        return false;
+    }
     const requestResult = ["ok", ""].includes(state.requestAnswer) ? null: <div>Not Sended</div>;
     return(
         <Fragment>
@@ -66,8 +106,8 @@ export const Settings = ({header, handler}) => {
                         Synchronize every <input type="number" min="0" onChange={handleTimerInput} className="input-time" value={timer} name="timer"/> minutes
                     </div>
                     <div className="form-buttons">
-                        <Button mode={!state.formValid || state.sended} type="default" text="Save" buttonSize="btn--xs--3" buttonStyle="yellowButton" link="/history"/>
-                        <Button mode={false || state.sended} onClick={clearInputs} type="default" text="Cancel" buttonSize="btn--xs" buttonStyle="greyButton"/>
+                        <Button onClick={onSubmit} mode={!state.formValid || load===true } type="default" text="Save" buttonSize="btn--xs--3" buttonStyle="yellowButton" link="/history"/>
+                        <Button mode={false || load===true} onClick={clearInputs} type="default" text="Cancel" buttonSize="btn--xs" buttonStyle="greyButton"/>
                     </div>
                 </form>
                 {requestResult}
@@ -75,3 +115,16 @@ export const Settings = ({header, handler}) => {
         </Fragment>
     );
 };
+//!state.formValid || load===true false || load===true
+const mapStateToProps = (state) => {
+    return { state };
+  }
+  
+const mapDispatchToProps = (dispatch) => {
+    return {
+        formSubmited: (inputs) => dispatch(formSubmited(inputs)),
+        downloadData: (data) => dispatch(downloadData(data)),
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Settings);

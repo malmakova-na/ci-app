@@ -24,11 +24,11 @@ export const Card=({data}) => {
     }
     
     return (
-        <div className="card card_media ">
-           <img className="card__icon card__icon_media" src={STATUS_TO_STYLE[data.status].src}/>
-            <div className="card__main-section card__main-section_media">
+        <div className="card">
+           <img className="card__icon " src={STATUS_TO_STYLE[data.status].src}/>
+            <div className="card__main-section">
                 <div className="info">
-                    <div className="info__item info__item_media-status">
+                    <div className="info__item">
                         <span className={`status status_size ${STATUS_TO_STYLE[data.status].color}`}>#{data.id}</span>
                         <span>{data.action}</span>
                     </div>
@@ -44,7 +44,7 @@ export const Card=({data}) => {
                         </div>
                     </div>
                 </div>
-                <div className="date-calendar date-calendar_media">
+                <div className="date-calendar">
                     <div className="date">
                         <img className="date__icon" src={calendar_icon}/>
                         <span className="date__info">{data.date}</span>

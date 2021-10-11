@@ -1,4 +1,4 @@
-.header-wrapper{
+.header {
     display: flex;
     color: #7F8285;
     flex-direction: row;
@@ -11,7 +11,7 @@
     display: flex;
     margin: 0;
 }
-.header {
+.header_name {
     font-weight: 500;
     font-size: 24px;
     line-height: 28px;

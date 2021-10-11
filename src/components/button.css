@@ -11,6 +11,7 @@
     border: 2px solid transparent;
     padding: 0;
     box-sizing: border-box;
+    line-height: 28px;
 }
 
 .button, 
@@ -26,7 +27,7 @@
 }
 .greyButton{
     background-color: #E6E6E6;
-    line-height: 28px;
+    /*line-height: 28px;*/
 }
 .greyButton:hover {
     background: #DBDBDB;

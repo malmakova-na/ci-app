@@ -11,7 +11,8 @@ export const useSettings = () => {
         commandValid:true,
         formErrors: {repository: '', command: ''},
         sended: false,
-        requestAnswer: ""
+        requestAnswer: "",
+        time: ""
     });
     const stateValue =(name, value) => {
         let newState = state;

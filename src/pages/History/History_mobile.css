@@ -1,14 +1,16 @@
-@media (max-width: 320px) {
-    .header-wrapper.header-wrapper_mobile {
+@media (max-width: 520px) {
+    .header-wrapper {
         height: 90px;
         align-items: flex-start;
         
     }
-    .history-wrapper.history-wrapper_media {
+    
+    .history-wrapper{
         grid-row: 2/3;
         grid-column: 2/3;
     }
-    .card.card_media{
+
+    .card{
         padding: 16px 12px;
         font-size: 15px;
         height: 177px;
@@ -16,29 +18,29 @@
     .status.status_size {
         font-size: 16px;
     }
-    .card__icon.card__icon_media {
+    .card__icon {
         width: 16px;
         height: 16px;
     }
-    .card__main-section.card__main-section_media{
+    .card__main-section{
         display: flex;
         flex-direction: column;
     }
-    .info__item.info__item_media{
+    .info__item{
         
         display: flex;
         flex-direction: row;
        
         justify-content: space-between;
     }
-    .date-calendar.date-calendar_media{
+    .date-calendar{
         border-top: 1px solid #F0F2F3;
         padding-top: 8px;
         width: 189px;
         height: 16px;
         flex-direction: row;
     }
-     .info__item.info__item_media-data {
+     .info__item {
         display: flex;
         flex-direction: column;
         align-items: flex-start;

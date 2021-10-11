@@ -14,8 +14,7 @@ export const Home = ({header}) => {
 
     return (
         <Fragment>
-            
-                <Header header = {header} buttons={[STYLES.home_header.btn_settings]} headerStyle={STYLES.home_header.header_style} />
+            <Header header = {header} buttons={[STYLES.home_header.btn_settings]} headerStyle={STYLES.home_header.header_style} />
             <div className='contentWrapper'>
                 <div className='content'>
                 <img className="img" src={logo} alt='logo'/>
@@ -25,8 +24,6 @@ export const Home = ({header}) => {
                 <Button text='Open Settings' buttonSize='btn--m' buttonStyle='yellowButton' link="/settings"/>
                 </div>
             </div>
-            
-            
         </Fragment>
     );
 }
