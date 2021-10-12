@@ -1,4 +1,4 @@
-# Домашнее задание React и Redux
+# Домашнее задание React
 
 
 ## How to get started
