@@ -18,8 +18,8 @@
     cursor: pointer;
 }
 .card__icon{
-    width: 24px;
     height: 24px;
+    margin-right: 8px;
 }
 .card__main-section{
     width: 100%;
@@ -32,6 +32,9 @@
 }
 .info {
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .date{
     display: flex;
@@ -44,6 +47,7 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+    opacity: 50%;
 }
 .info__item_media-status {
     margin-bottom: 8px;
@@ -51,6 +55,7 @@
 .info__item_media-data {
     display: flex;
     align-items: flex-end;
+    text-align: end;
     flex-direction: row;
 }
 .icon__status {
@@ -99,7 +104,9 @@
 .git-info__item{
     margin-right: 4px ;
 }
-
+.git-info__item_isGrey{
+    opacity: 50%;
+}
 .body__item{
     display: flex;
     flex-direction: row;
@@ -111,8 +118,7 @@
 }
 
 .user__icon {
-    width: 16px;
-    height: 16px;
+   
     margin-right: 4px;
 }
 .user__icon_size_s {

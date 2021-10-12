@@ -36,7 +36,7 @@ export const Card=({data}) => {
                         <div className="git-info">
                             <img className="git-info__icon" src={icon_branch}/>
                             <span className="git-info__item">{data.brunch}</span>
-                            <span className="git-info__item">{data.hash}</span>
+                            <span className="git-info__item git-info__item_isGrey">{data.hash}</span>
                         </div>
                         <div className="user">
                             <img className="user__icon" src={icon_user}/>

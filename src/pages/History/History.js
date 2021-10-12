@@ -10,7 +10,7 @@ import {connect} from 'react-redux';
 
 import run_btn_icon from '../../icons/play.svg';
 import settings_btn_icon from '../../icons/settings.svg'
-const History = ({header, open, settings, repository, loading}) => {
+const History = ({header, open, settings, repository, loading, modal}) => {
     console.log("history ", settings)
     const STYLES = {
         btn_run: {
@@ -18,13 +18,13 @@ const History = ({header, open, settings, repository, loading}) => {
             type: "main",
             style: "button_position-r",
             size: "btn--xm--1",
-            icon: <img src={run_btn_icon}></img>,
+            icon: <img src={run_btn_icon} className="button-icon_side_left"></img>,
             onClick: open
         },
         btn_settings: {
             text: "",
             type: "main",
-            icon:  <img src={settings_btn_icon}></img>,
+            icon:  <img className="button-icon" src={settings_btn_icon}></img>,
             size: "btn--xs--2",
             style: "greyButton",
             link: "/settings",
@@ -45,6 +45,7 @@ const History = ({header, open, settings, repository, loading}) => {
 
     return (
         <Fragment>
+            {modal}
             <Header header={repository} 
                 buttons={[STYLES.btn_run,STYLES.btn_settings]} 
                 headerStyle="black"

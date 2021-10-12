@@ -27,7 +27,7 @@ function App({settings}) {
 
   return (
     <Fragment>
-      {modalWindow ? <Modal mode="" close={closeModalWindow}/>:null}
+      {modalWindow? <Modal mode="" close={closeModalWindow}/>:null}
       <div className="container">
      <Switch>
         <Route
