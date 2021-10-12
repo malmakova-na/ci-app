@@ -1,6 +1,6 @@
 # Домашнее задание React
-На ветке main- Дз1 
-на ветке with_redux- Дз2
+1) На ветке main- Дз1 
+2) На ветке with_redux- Дз2
 
 ## How to get started
 
