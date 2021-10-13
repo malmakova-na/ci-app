@@ -4,11 +4,11 @@ export const validateField = (fieldName, value, setState, state) => {
     switch(fieldName) {
         case 'repository':
           newState.repositoryValid = value.trim().length !== 0;
-          newState.formErrors.repository = newState.repositoryValid ? '' : ' is invalid';
+          newState.formErrors.repository = newState.repositoryValid ? true : false;
           break;
         case 'command':
-          newState.commandValid =value.trim().length !== 0;
-          newState.formErrors.command = newState.commandValid ? '': ' is invalid';
+          newState.commandValid = value.trim().length !== 0;
+          newState.formErrors.command = newState.commandValid ? true: false;
           break;
         default:
           break;

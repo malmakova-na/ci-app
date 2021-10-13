@@ -9,7 +9,7 @@ export const useSettings = () => {
         formValid: false,
         repositoryValid:false,
         commandValid:true,
-        formErrors: {repository: '', command: ''},
+        formErrors: {repository: null, command: null},
         sended: false,
         requestAnswer: "",
         time: ""
@@ -27,14 +27,17 @@ export const useSettings = () => {
         stateValue("command", "");
         stateValue("branch", "");
         stateValue("commandValid", false)
-
+        stateValue("formErrors", {repository: null, command: null})
         setSubmitted(true);
     }
     const clearInput =(name) => {
         stateValue(name, "");
         if (name!=="brunch") {
             stateValue(`${name}`+"Valid", false);
+            stateValue("formValid", false);
+
         }
+        //console.log("name", name)
         setSubmitted(true);
     };
     const clearRepository = (e) => {

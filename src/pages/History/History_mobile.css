@@ -1,4 +1,4 @@
-@media (max-width: 520px) {
+@media (max-width: 600px) {
     .header-wrapper {
         height: 90px;
         align-items: flex-start;
@@ -75,6 +75,8 @@
         margin-top: 12px;
     }
     
-   
+   .button-icon_side_left {
+       margin: 0;
+   }
 
 }

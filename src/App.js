@@ -61,7 +61,7 @@ function App({settings}) {
         />
       </Switch>
     </div>
-    <Footer/>
+    <Footer copyRight="Malmakova Namina" links={["Support", "Learning", "Русская Версия"]}/>
     </Fragment>
   );
 }

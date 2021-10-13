@@ -18,7 +18,7 @@ export const Modal = ({mode, close}) => {
             <div className="modal">
                 <h2 className="modal__header">New build</h2>    
                 <div className="modal__field">
-                    <Field handler={handlerModalInput} label="label_modal" handlerDelete={clearInput}  value={inputModal} placeholder="Commit hush" styleHeader="initial" sizefield="field--s" header="Enter the commit hash which you want to build."></Field>
+                    <Field handler={handlerModalInput} label="label_modal" valid={true}handlerDelete={clearInput}  value={inputModal} placeholder="Commit hush" styleHeader="initial" sizefield="field--s" header="Enter the commit hash which you want to build."></Field>
                 </div>
                 <div className="modal__buttons">
                     <Button text="Run build" type="default" buttonSize="btn--xm" buttonStyle="yellowButton" onClick={close}/>

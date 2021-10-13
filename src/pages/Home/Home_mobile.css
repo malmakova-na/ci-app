@@ -1,4 +1,4 @@
-@media (max-width: 520px) {
+@media (max-width: 600px) {
     .main {
         grid-template-columns: 100%;
         grid-template-rows: 52px 1fr 68px;
@@ -35,5 +35,7 @@
         grid-column: 1/2;
         grid-row: 1/3; 
     }
-
+    .footer {
+        justify-content: flex-start;
+    }
 }

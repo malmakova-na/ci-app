@@ -34,11 +34,7 @@ const Settings = ({header/*, handler*/, formSubmited, downloadData}) => {
     const onSubmit =(e) => {
         e.preventDefault();
         setLoading(true)
-        //loadingBegin();
-        console.log("onSubmit");
-        //console.log(submitted)
         setTimeout(()=> {//имитирую загрузку процесс клонирования репозитория
-            //console.log(loading, settings)
             if(state.formValid) {
                 formSubmited({//сохраняю данные из формы
                     repository: state.repository,
@@ -49,19 +45,12 @@ const Settings = ({header/*, handler*/, formSubmited, downloadData}) => {
                 downloadData(data);
                 setSubmitted(true);
                 setLoading(false);
-                //console.log(submitted)
-                //loadingEnd();
-                //console.log(loading, settings);
-                //console.log(loading)
-                //console.log("onSubmit ", settings.loading, settings.loading)
                 history.push('/');
             } else {
-                //loadingEnd();
+                //err
             }
             
         }, 2000);
-        //console.log("1");
-        //stateValue("sended", false)
     };
     
 
@@ -86,22 +75,29 @@ const Settings = ({header/*, handler*/, formSubmited, downloadData}) => {
         console.log(false)
         return false;
     }
+    //console.log(state.formErrors["repository"], state.formErrors.repository === null || state.formErrors.repository=== true  )
+    const isValidStyle = (value) => {
+        console.log(state.formErrors[value] === null || state.formErrors[value]=== true);
+        console.log("repa", state.repositoryValid)
+        console.log("com",state.commandValid)
+        return state.formErrors[value] === null || state.formErrors[value]=== true;
+    }
     const requestResult = ["ok", ""].includes(state.requestAnswer) ? null: <div>Not Sended</div>;
+    console.log(state.repository, state.command, state.formValid)
     return(
         <Fragment>
             <Header header = {header} buttons={[]}/>
             <div className="form-wrapper">
                 <h2 className="form-name">Settings</h2>
-                <div className="form-description">Configure repository connection and synchronization settings.</div>
-                <FormErrors formErrors={state.formErrors} />                
-                <form className="fields" onSubmit={onSubmit}>
+                <div className="form-description">Configure repository connection and synchronization settings.</div>        
+                <form className="fields" >
                     <Field handler={handleUserInput} handlerDelete={clearRepository} name="repository"
                         value={state.repository} header="Github repository" mode="required" 
-                        placeholder="use-name/repo-name"/>
+                        placeholder="use-name/repo-name" valid={isValidStyle("repository")}/>
                     <Field handlerDelete={clearCommand} handler={handleUserInput} name="command" 
-                        value={state.command} header="Build Command" mode="required" />
+                        value={state.command} header="Build Command" mode="required"  valid={isValidStyle("command")}/>
                     <Field handler={handleUserInput} handlerDelete={clearBrunch} name="branch" 
-                        value={state.branch} header="Main branch"/>
+                        value={state.branch} header="Main branch" valid={true}/>
                     <div className="setting-time">
                         Synchronize every <input type="number" min="0" onChange={handleTimerInput} className="input-time" value={timer} name="timer"/> minutes
                     </div>
@@ -116,6 +112,7 @@ const Settings = ({header/*, handler*/, formSubmited, downloadData}) => {
     );
 };
 //!state.formValid || load===true false || load===true
+//<FormErrors formErrors={state.formErrors} /> 
 const mapStateToProps = (state) => {
     return { state };
   }

@@ -17,7 +17,7 @@ const STYLES = {
             type: "main",
             style: "greyButton",
             size: "btn--s",
-            icon: <img src={run_btn_icon}></img>
+            icon: <img src={run_btn_icon} ></img>
         },
         btn_settings: {
             text: "",
@@ -32,7 +32,7 @@ const STYLES = {
         btn_settings: {
             text: "Settings",
             type: "main",
-            icon:  <img src={settings_btn_icon} className="button-icon_side_left"></img>,
+            icon:  <img src={settings_btn_icon} className=" button-icon_side_left"></img>,
             size: "btn--s",
             style: "greyButton",
             link: "/settings"
