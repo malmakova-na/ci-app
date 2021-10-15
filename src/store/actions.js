@@ -1,15 +1,10 @@
-export const formSubmited = (formData) => {
-    return {
-        type: 'FORM_SUBMITED',
-        ...formData
-    }    
-}
+export const formSubmited = (formData) => ({
+  type: 'FORM_SUBMITED',
+  ...formData,
+});
 
-export const downloadData = (data) => {
-    return {
-        type: 'DOWNLOAD_DATA',
-        settings: data,
-        submitted: true
-    }
-}
-
+export const downloadData = (data) => ({
+  type: 'DOWNLOAD_DATA',
+  settings: data,
+  submitted: true,
+});

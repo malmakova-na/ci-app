@@ -19,6 +19,7 @@
 .field >.button {
     display: none;
 }
+
 .field:hover > .button {
    display: block;
 }

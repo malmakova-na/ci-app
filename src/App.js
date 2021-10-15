@@ -1,72 +1,69 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Redirect, Route, Switch } from 'react-router';
-import { Fragment } from 'react';
+import { Route, Switch } from 'react-router';
+import { connect } from 'react-redux';
 
-import {connect} from 'react-redux';
-
-import {Home} from './pages/Home/Home.js';
-import {Footer} from './components/footer/Footer';
+import { Home } from './pages/Home/Home';
+import { Footer } from './components/footer/Footer';
 import Settings from './pages/Settings/Settings';
 import History from './pages/History/History';
-import {ThemeContext} from './utils/themeContext';
-import {Modal} from './components/modal/Modal';
+import { ThemeContext } from './utils/themeContext';
+import { Modal } from './components/modal/Modal';
 
-function App({settings}) {
+function App({ settings }) {
   const ctx = useContext(ThemeContext);
   const [modalWindow, setModalWindow] = useState(false);
-  
+
   const openModalWindow = () => {
     setModalWindow(true);
-  }
+  };
   const closeModalWindow = () => {
     setModalWindow(false);
-  }
+  };
 
-  useEffect(()=> {
+  useEffect(() => {
   }, [settings, modalWindow]);
 
   return (
-    <Fragment>
-      {modalWindow? <Modal mode="" close={closeModalWindow}/>:null}
+    <>
+      {modalWindow ? <Modal mode="" close={closeModalWindow} /> : null}
       <div className="container">
-     <Switch>
-        <Route
-          path="/"
-          exact={true}
-          render={() => settings.length === 0  ?
-            <Home header="School CI Server"/>:
-            <History open={openModalWindow} />         
-          }
-        />
-        <Route
-         path="/history"
-         exact={true}
-          render={()=><ThemeContext.Provider value={ctx}>
-            <History open={openModalWindow} />
-          </ThemeContext.Provider>}
-        />
-        <Route
-          path="/home"
-          exact={true}
-          render={() => <ThemeContext.Provider value={ctx}>
-             <Home header="School CI Server"/>
-             </ThemeContext.Provider>}
-        />
-        <Route
-          path="/settings"
-          exact={true}
-          render={() =>
-              <Settings header="School CI Server"/>
-          }
-        />
-      </Switch>
-    </div>
-    <Footer copyRight="Malmakova Namina" links={["Support", "Learning", "Русская Версия"]}/>
-    </Fragment>
+        <Switch>
+          <Route
+            path="/"
+            exact
+            render={() => (settings.length === 0
+              ? <Home header="School CI Server" />
+              : <History open={openModalWindow} />)}
+          />
+          <Route
+            path="/history"
+            exact
+            render={() => (
+              <ThemeContext.Provider value={ctx}>
+                <History open={openModalWindow} />
+              </ThemeContext.Provider>
+            )}
+          />
+          <Route
+            path="/home"
+            exact
+            render={() => (
+              <ThemeContext.Provider value={ctx}>
+                <Home header="School CI Server" />
+              </ThemeContext.Provider>
+            )}
+          />
+          <Route
+            path="/settings"
+            exact
+            render={() => <Settings header="School CI Server" />}
+          />
+        </Switch>
+      </div>
+      <Footer copyRight="Malmakova Namina" links={['Support', 'Learning', 'Русская Версия']} />
+    </>
   );
 }
-const mapStateToProps = ({settings}) => {
-  return {settings};
-}
+const mapStateToProps = ({ settings }) => ({ settings });
 
-export default connect(mapStateToProps)(App)
+export default connect(mapStateToProps)(App);

@@ -1,22 +1,11 @@
-import {ToolBar} from "./HeaderTool";
-import "./Header.css";
-export const Header = ({header, headerStyle, buttons}) => {
-  
-  return<header className="header">
-          <h1 className={`header_name ${headerStyle}`}>{header}</h1>
-          <div className="btn-wrapper">
-            <ToolBar buttons={buttons}/>
-          </div>
-        </header>
-};
+import { ToolBar } from './HeaderTool';
+import './Header.css';
 
-/*
-<div className="header-wrapper header-wrapper_mobile  header-wrapper-full ">
-          <h1 className={`header ${headerStyle}`}>{header}</h1>
-          <div className="btn-wrapper">
-            <ToolBar buttons={buttons}/>
-          </div>
-        </div>
-
-
-*/
+export const Header = ({ header, headerStyle, buttons }) => (
+  <header className="header">
+    <h1 className={`header_name ${headerStyle}`}>{header}</h1>
+    <div className="btn-wrapper">
+      <ToolBar buttons={buttons} />
+    </div>
+  </header>
+);
