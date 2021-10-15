@@ -5,12 +5,12 @@
 
 ## Validation
 * filed "Github repository"
-if the entered data contains spaces, an error will be displayed
-example: 
-"Your GitHub Reporitory" -> not valid
-"Your_GitHub/Reporitory" -> valid
+if the entered data contains spaces, an error will be displayed  
+example:  
+"Your GitHub Reporitory" -> not valid  
+"Your_GitHub/Reporitory" -> valid  
 * filed "Build Command"
-if the entered data contains spaces at the beginning, an error will be displayed
+if the entered data contains spaces at the beginning, an error will be displayed  
 example: 
-" Your Build Command" -> not valid
-"Your Build Command " -> valid
+" Your Build Command" -> not valid  
+"Your Build Command " -> valid  
