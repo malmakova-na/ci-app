@@ -1,6 +1,5 @@
 # Домашнее задание React
-1) На ветке main- Дз1 
-2) На ветке with_redux- Дз2
+Домашнее задание проверять  на ветке with_redux
 
 ## How to get started
 

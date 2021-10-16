@@ -12,7 +12,7 @@ import {Modal} from './components/modal/Modal';
 
 function App() {
   const ctx = useContext(ThemeContext);
-  //const [settings, setSettings]= useState([]);
+  const [settings, setSettings]= useState([]);
   const [modalWindow, setModalWindow] = useState(false);
   
   const openModalWindow = () => {
@@ -21,10 +21,10 @@ function App() {
   const closeModalWindow = () => {
     setModalWindow(false);
   }
-  /*const onSubmit = (data) => {
+  const onSubmit = (data) => {
     const newSettings = [...settings, data];
     setSettings(newSettings);
-  }*/
+  }
 
 
   useEffect(()=> {
